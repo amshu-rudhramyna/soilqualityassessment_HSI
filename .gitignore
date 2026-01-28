@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Conda environment
+/conda-meta/
+/envs/
+/pkgs/
+.condarc
+*.conda
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a small script that resides in
+#  the same directory as the spec file.
+*.spec
+
+# C extensions
+*.so
+
+# Other
+.nonadmin
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.o
+*.log
+*.tmp
+*~
+
+# IDE
+.idea/
+.vscode/
+
+# Data and models
+# dataset/
+# models/
+*.pdf
+
+# Jupyter Notebook
+.ipynb_checkpoints
