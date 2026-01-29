@@ -80,9 +80,7 @@ The following plots show the predicted vs. actual values for the best performing
     python create_visualizations_updated.py
     ```
 
-## Updates from Gemini CLI Session (January 29, 2026)
-
-This section summarizes the key developments and model implementations performed during the recent Gemini CLI session.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### 1. Data Handling & Mock Labels
 - **HYPERVIEW2 Dataset Integration:** The project now utilizes the actual HYPERVIEW2 dataset.
