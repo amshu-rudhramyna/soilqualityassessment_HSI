@@ -37,7 +37,7 @@ The models were trained on a mock dataset, and the following results were obtain
 
 The following chart compares the R2 scores of the different models for each nutrient.
 
-![R2 Scores Comparison](visualizations/r2_scores_comparison.png)
+![R2 Scores Comparison Updated](visualizations_updated/r2_scores_comparison_updated.png)
 
 ### Predicted vs. Actual Values
 
@@ -45,11 +45,11 @@ The following plots show the predicted vs. actual values for the best performing
 
 | Phosphorus (P) | Potassium (K) |
 | :---: | :---: |
-| ![P vs Actual](visualizations/P_pred_vs_actual.png) | ![K vs Actual](visualizations/P_pred_vs_actual.png) |
+| ![P vs Actual](visualizations_updated/P_pred_vs_actual_comparison.png) | ![K vs Actual](visualizations_updated/K_pred_vs_actual_comparison.png) |
 
 | Magnesium (Mg) | pH |
 | :---: | :---: |
-| ![Mg vs Actual](visualizations/Mg_pred_vs_actual.png) | ![pH vs Actual](visualizations/pH_pred_vs_actual.png) |
+| ![Mg vs Actual](visualizations_updated/Mg_pred_vs_actual_comparison.png) | ![pH vs Actual](visualizations_updated/pH_pred_vs_actual_comparison.png) |
 
 ## How to Run the Code
 
@@ -61,9 +61,9 @@ The following plots show the predicted vs. actual values for the best performing
     ```bash
     python baseline_model.py
     ```
-3.  **Run the `create_visualizations.py` script to generate the visualizations:**
+3.  **Run the `create_visualizations_updated.py` script to generate the visualizations:**
     ```bash
-    python create_visualizations.py
+    python create_visualizations_updated.py
     ```
 
 ## Updates from Gemini CLI Session (January 29, 2026)
