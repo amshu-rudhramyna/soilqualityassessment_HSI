@@ -19,8 +19,7 @@ This project utilizes the **HYPERVIEW2 dataset**, a hyperspectral imaging datase
 ### Nutrient Labels (Ground Truth):
 - **Original Labels:** The raw `train_gt.csv` file within the HYPERVIEW2 dataset provides ground truth labels for `B, Cu, Zn, Fe, S, Mn`.
 - **Project-Specific Labels:** This project requires predictions for **Phosphorus (P), Potassium (K), Magnesium (Mg), and pH**.
-- **Mock Data Generation:** Due to the discrepancy between available and required labels, mock data for `P, K, Mg, pH` was generated using `generate_mock_gt_pk_mg_ph.py`. This mock data is stored in `data/HYPERVIEW2/train_gt_pk_mg_ph_mock.csv` and contains 1876 samples, enabling the development and testing of models for the target nutrients. It is important to note that current model performance (e.g., negative R2 scores) is expected and acceptable given the synthetic nature of these labels, as the primary goal is pipeline functionality verification.
-
+    - **Mock Data Generation:** Due to the discrepancy between available and required labels, mock data for `P, K, Mg, pH` was generated using `generate_mock_gt_pk_mg_ph.py`. This mock data is stored in `data/HYPERVIEW2/train_gt_pk_mg_ph_mock.csv` and contains 1876 samples, enabling the development and testing of models for the target nutrients. It is important to note that current model performance (e.g., negative R2 scores) is expected and acceptable given the synthetic nature of these labels, as the primary goal is pipeline functionality verification. Both the baseline model (EagleEyes) and the proposed new model (HyperSoilNet-like) used 1876 files (samples) from the HYPERVIEW2 dataset for their training and evaluation. This number corresponds to the mock labels generated for P, K, Mg, and pH, where each sample represents one hyperspectral image .npz file.
 ## Methodology
 
 ### 1. Data Preprocessing
