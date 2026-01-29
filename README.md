@@ -6,6 +6,21 @@ This repository contains the implementation of a project for a capstone review, 
 
 The goal of this project is to build a model that can predict the levels of key soil nutrients (Phosphorus, Potassium, Magnesium, and pH) from hyperspectral images. The project also includes a method for calculating a Soil Quality Index (SQI) based on the predicted nutrient levels.
 
+## Dataset Details
+
+This project utilizes the **HYPERVIEW2 dataset**, a hyperspectral imaging dataset primarily focused on agricultural and environmental monitoring. The dataset is sourced from EOTDL and consists of both airborne and satellite hyperspectral images.
+
+### Hyperspectral Data Characteristics:
+- **Source:** HYPERVIEW2 dataset, containing data from `hsi_airborne` and `hsi_satellite` acquisitions.
+- **Data Format:** Hyperspectral cubes are stored in `.npz` files.
+- **Shape:** Each hyperspectral cube has an inhomogeneous shape of `(430, Height, Width)`, where `Height` and `Width` vary across different samples. The spectral data is accessed via the `'data'` key within the `.npz` files.
+- **Wavelengths:** The airborne data contains 430 spectral bands. The corresponding wavelengths are defined in `wavelengths.json`. A common preprocessing step involves trimming bands to a specific range (e.g., 462-938 nm for the HyperSoilNet-like model), resulting in 150 relevant bands (original band indices 15-164).
+
+### Nutrient Labels (Ground Truth):
+- **Original Labels:** The raw `train_gt.csv` file within the HYPERVIEW2 dataset provides ground truth labels for `B, Cu, Zn, Fe, S, Mn`.
+- **Project-Specific Labels:** This project requires predictions for **Phosphorus (P), Potassium (K), Magnesium (Mg), and pH**.
+- **Mock Data Generation:** Due to the discrepancy between available and required labels, mock data for `P, K, Mg, pH` was generated using `generate_mock_gt_pk_mg_ph.py`. This mock data is stored in `data/HYPERVIEW2/train_gt_pk_mg_ph_mock.csv` and contains 1876 samples, enabling the development and testing of models for the target nutrients. It is important to note that current model performance (e.g., negative R2 scores) is expected and acceptable given the synthetic nature of these labels, as the primary goal is pipeline functionality verification.
+
 ## Methodology
 
 ### 1. Data Preprocessing
