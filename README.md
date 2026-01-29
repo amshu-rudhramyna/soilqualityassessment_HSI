@@ -45,7 +45,7 @@ The following plots show the predicted vs. actual values for the best performing
 
 | Phosphorus (P) | Potassium (K) |
 | :---: | :---: |
-| ![P vs Actual](visualizations/P_pred_vs_actual.png) | ![K vs Actual](visualizations/K_pred_vs_actual.png) |
+| ![P vs Actual](visualizations/P_pred_vs_actual.png) | ![K vs Actual](visualizations/P_pred_vs_actual.png) |
 
 | Magnesium (Mg) | pH |
 | :---: | :---: |
@@ -65,3 +65,30 @@ The following plots show the predicted vs. actual values for the best performing
     ```bash
     python create_visualizations.py
     ```
+
+## Updates from Gemini CLI Session (January 29, 2026)
+
+This section summarizes the key developments and model implementations performed during the recent Gemini CLI session.
+
+### 1. Data Handling & Mock Labels
+- **HYPERVIEW2 Dataset Integration:** The project now utilizes the actual HYPERVIEW2 dataset.
+- **Mock P, K, Mg, pH Labels:** Due to a discrepancy between required target nutrients (P, K, Mg, pH) and available ground truth, a new script (`generate_mock_gt_pk_mg_ph.py`) was created to generate mock labels for P, K, Mg, pH. This allows continued model development.
+
+### 2. Competitive Baseline Model (EagleEyes)
+- **Implementation:** A new model, `eagle_eyes_baseline_model.py`, implements the "Competitive Baseline (EagleEyes)" model.
+- **Features:** It uses spatially averaged hyperspectral data with handcrafted features, including spectral derivatives, SAVI, and RVI.
+- **Architecture:** Employs an ensemble of Random Forest and K-Nearest Neighbors regressors.
+
+### 3. HyperSoilNet-like Model (Phase 1)
+- **Implementation:** Initial development of the "New Model for Capstone Project" is in `hypersoilnet_base.py`.
+- **Preprocessing:** Includes band trimming to focus on the 462–938 nm range.
+- **Advanced Feature Engineering:** Incorporates Singular Value Decomposition (SVD) and Fast Fourier Transform (FFT) features.
+- **Model Training:** Trains individual Random Forest, PLS Regression, and XGBoost regressors for each nutrient (without ensembling at this stage).
+- **Note on DWT:** Discrete Wavelet Transform (DWT) features were planned but excluded due to persistent library installation issues (`pywt`).
+
+### How to Run New Models:
+- **Generate Mock Labels:** `python generate_mock_gt_pk_mg_ph.py`
+- **Run EagleEyes Baseline:** `python eagle_eyes_baseline_model.py`
+- **Run HyperSoilNet Phase 1 Base Model:** `python hypersoilnet_base.py`
+
+These steps are crucial for reproducing the current state and results of the project.

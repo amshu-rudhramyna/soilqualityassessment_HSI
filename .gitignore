@@ -60,3 +60,7 @@ MANIFEST
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# Large result files
+results_eagleeyes.pkl
+results_hypersoilnet_base.pkl
